@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_e6d32ceb98a87195d1ce54334406bc58 {
+                #map_f809a9cdb511f5460b97af78911c32c7 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -62,15 +62,15 @@
 <body>
     
     
-            <div class="folium-map" id="map_e6d32ceb98a87195d1ce54334406bc58" ></div>
+            <div class="folium-map" id="map_f809a9cdb511f5460b97af78911c32c7" ></div>
         
     <a href='#' id='export'>Export</a>
 </body>
 <script>
     
     
-            var map_e6d32ceb98a87195d1ce54334406bc58 = L.map(
-                "map_e6d32ceb98a87195d1ce54334406bc58",
+            var map_f809a9cdb511f5460b97af78911c32c7 = L.map(
+                "map_f809a9cdb511f5460b97af78911c32c7",
                 {
                     center: [0.0, 0.0],
                     crs: L.CRS.EPSG3857,
@@ -79,26 +79,26 @@
                     preferCanvas: false,
                 }
             );
-            L.control.scale().addTo(map_e6d32ceb98a87195d1ce54334406bc58);
+            L.control.scale().addTo(map_f809a9cdb511f5460b97af78911c32c7);
 
             
 
         
     
-            var tile_layer_a3166d784fe813619c83e8b64de84f45 = L.tileLayer(
+            var tile_layer_b9d13bb7d5af6a9525e6164a6db2d122 = L.tileLayer(
                 "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
                 {"attribution": "Esri Satellite", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
         
     
-            tile_layer_a3166d784fe813619c83e8b64de84f45.addTo(map_e6d32ceb98a87195d1ce54334406bc58);
+            tile_layer_b9d13bb7d5af6a9525e6164a6db2d122.addTo(map_f809a9cdb511f5460b97af78911c32c7);
         
     
-            var locate_control_b3638e7bf0058c47d4279cfa33ae66f9 = L.control.locate(
-                {"locateOptions": {"enableHighAccuracy": true, "maxZoom": 18}, "strings": {"title": "Show me where I am"}}
-            ).addTo(map_e6d32ceb98a87195d1ce54334406bc58);
+            var locate_control_d04915e314973201e32551ca9c884bf1 = L.control.locate(
+                {"locateOptions": {"enableHighAccuracy": true, "maxZoom": 25}, "strings": {"title": "Show me where I am"}}
+            ).addTo(map_f809a9cdb511f5460b97af78911c32c7);
             
-                locate_control_b3638e7bf0058c47d4279cfa33ae66f9.start();
+                locate_control_d04915e314973201e32551ca9c884bf1.start();
             
         
     
@@ -108,14 +108,14 @@
               edit: {"edit": true, "remove": true},
             }
             // FeatureGroup is to store editable layers.
-            var drawnItems_draw_control_9c29769c19301e3651826c46247dc5b6 = new L.featureGroup().addTo(
-                map_e6d32ceb98a87195d1ce54334406bc58
+            var drawnItems_draw_control_a450477972e0ebf2508d745d5a2ecb84 = new L.featureGroup().addTo(
+                map_f809a9cdb511f5460b97af78911c32c7
             );
-            options.edit.featureGroup = drawnItems_draw_control_9c29769c19301e3651826c46247dc5b6;
-            var draw_control_9c29769c19301e3651826c46247dc5b6 = new L.Control.Draw(
+            options.edit.featureGroup = drawnItems_draw_control_a450477972e0ebf2508d745d5a2ecb84;
+            var draw_control_a450477972e0ebf2508d745d5a2ecb84 = new L.Control.Draw(
                 options
-            ).addTo( map_e6d32ceb98a87195d1ce54334406bc58 );
-            map_e6d32ceb98a87195d1ce54334406bc58.on(L.Draw.Event.CREATED, function(e) {
+            ).addTo( map_f809a9cdb511f5460b97af78911c32c7 );
+            map_f809a9cdb511f5460b97af78911c32c7.on(L.Draw.Event.CREATED, function(e) {
                 var layer = e.layer,
                     type = e.layerType;
                 var coords = JSON.stringify(layer.toGeoJSON());
@@ -123,14 +123,14 @@
                     alert(coords);
                     console.log(coords);
                 });
-                drawnItems_draw_control_9c29769c19301e3651826c46247dc5b6.addLayer(layer);
+                drawnItems_draw_control_a450477972e0ebf2508d745d5a2ecb84.addLayer(layer);
              });
-            map_e6d32ceb98a87195d1ce54334406bc58.on('draw:created', function(e) {
-                drawnItems_draw_control_9c29769c19301e3651826c46247dc5b6.addLayer(e.layer);
+            map_f809a9cdb511f5460b97af78911c32c7.on('draw:created', function(e) {
+                drawnItems_draw_control_a450477972e0ebf2508d745d5a2ecb84.addLayer(e.layer);
             });
             
             document.getElementById('export').onclick = function(e) {
-                var data = drawnItems_draw_control_9c29769c19301e3651826c46247dc5b6.toGeoJSON();
+                var data = drawnItems_draw_control_a450477972e0ebf2508d745d5a2ecb84.toGeoJSON();
                 var convertedData = 'text/json;charset=utf-8,'
                     + encodeURIComponent(JSON.stringify(data));
                 document.getElementById('export').setAttribute(
